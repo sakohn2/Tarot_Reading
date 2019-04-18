@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/tarot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/The_title_placeholder"
+            android:scaleType="centerInside"
+            android:src="@drawable/tarot"
+            android:visibility="visible"
+            app:srcCompat="@drawable/tarot" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fav_colors" />
+
+                <Spinner
+                    android:id="@+id/fav_colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="151dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fav_seasons" />
+
+                <Spinner
+                    android:id="@+id/fav_seasons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/birthday" />
+
+                <EditText
+                    android:id="@+id/birth_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/birthdate_format"
+                    android:importantForAutofill="no"
+                    android:inputType="date"
+                    tools:targetApi="o" />
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/start_button"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_fortune"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

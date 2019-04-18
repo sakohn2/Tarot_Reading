@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Tarot Reading</string>
+    <string name="fav_colors">"Your favorite color is: "</string>
+    <string name="fav_seasons">Your favorite season is:</string>
+    <string name="birthday">Your birthday is:</string>
+    <string name="birthdate_format">MM/DD/YY</string>
+    <string name="The_title_placeholder">Tarot Fortunes</string>
+    <string name="start_fortune">Read My Fortune</string>
+    <string-array name="fav_colors">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Purple</item>
+    </string-array>
+    <string-array name="fav_seasons">
+        <item>Winter</item>
+        <item>Spring</item>
+        <item>Summer</item>
+        <item>Fall</item>
+    </string-array>
+</resources>
