@@ -6,6 +6,13 @@
     <string name="birthdate_format">MM/DD/YY</string>
     <string name="The_title_placeholder">Tarot Fortunes</string>
     <string name="start_fortune">Read My Fortune</string>
+    <string name="reading_expln">Here is your fortune, my friend.</string>
+    <string name="back_butt">Back</string>
+    <string name="finish_butt">Finish</string>
+    <string name="deck">it\'s a deck</string>
+    <string name="pastCard">it\'s the past fortune card</string>
+    <string name="presentCard">it\'s the present fortune card</string>
+    <string name="futureCard">it\'s the future fortune card</string>
     <string-array name="fav_colors">
         <item>Blue</item>
         <item>Red</item>

@@ -6,8 +6,8 @@ package com.example.lib;
  * A user is set up once the "Read My Fortune" button is hit.
  */
 public class User {
-    private String favSeason = "winter";
-    private String favColor = "blue";
+    private String favSeason;
+    private String favColor;
     private String starSign = "";
 
     /**
@@ -52,12 +52,11 @@ public class User {
     }
 
     /**
-     * This function finds the star-sign corresponding to the birth-date of the user.
+     * This function finds the star-sign corresponding to the birth-date of the user and sets it for the User.
      *
      * @param date The birth-date of the user (from the constructor in format MM/DD/YYYY)
-     * @return the star-sign corresponding to the birth-date
      */
-    protected void setStarSign(String date) {
+    private void setStarSign(String date) {
         if (date == null || date.length() != 10) {
             starSign = "bad";
             return;
@@ -158,10 +157,8 @@ public class User {
             case 12:
                 if (day <= 21) {
                     starSign = "Sagittarius";
-                    return;
                 } else {
                     starSign = "Capricorn";
-                    return;
                 }
         }
     }

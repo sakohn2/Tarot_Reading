@@ -1,5 +1,6 @@
 package com.example.tarotreading;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -11,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.lib.TarotCard;
 import com.example.lib.TarotReading;
 import com.example.lib.User;
 
@@ -189,5 +189,10 @@ import java.util.Calendar;
             User current = new User(FAV_SEASON, FAV_COLOR, BIRTH_DATE);
             // Move to the activity_reading and call
             currentReading = new TarotReading(current);
+
+            Intent readingIntent = new Intent(this, ReadingsActivity.class);
+
+            startActivity(readingIntent);
+            finish();
         }
     }
