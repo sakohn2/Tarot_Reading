@@ -7,8 +7,10 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,15 +21,15 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:text="@string/reading_expln"
             android:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="275dp"
-            android:gravity="center_vertical"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="horizontal"
             tools:visibility="visible">
 
@@ -35,61 +37,52 @@
                 android:id="@+id/deck"
                 android:layout_width="187dp"
                 android:layout_height="112dp"
-                android:layout_weight="0.5"
                 android:contentDescription="@string/deck"
                 app:srcCompat="@drawable/tarot_deck" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/card_past"
+                style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="143dp"
                 android:layout_height="209dp"
-                android:layout_weight="1"
+                android:background="@android:color/background_light"
                 android:contentDescription="@string/pastCard"
-                android:visibility="visible"
-                app:srcCompat="@drawable/ar01" />
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/back" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/card_present"
+                style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="143dp"
                 android:layout_height="209dp"
-                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/presentCard"
-                android:visibility="visible"
-                app:srcCompat="@drawable/ar01" />
+                android:scaleType="centerInside"
+                android:src="@drawable/back"
+                android:visibility="visible" />
 
-            <ImageView
-                android:id="@+id/card_past3"
+            <ImageButton
+                android:id="@+id/card_future"
                 android:layout_width="143dp"
                 android:layout_height="209dp"
-                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/futureCard"
+                android:scaleType="centerInside"
                 android:visibility="visible"
-                app:srcCompat="@drawable/ar01" />
+                app:srcCompat="@drawable/back" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:orientation="horizontal"
-            android:visibility="visible">
-
-            <Button
-                android:id="@+id/back_toSetUp"
-                style="@android:style/Widget.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/back_butt"
-                android:visibility="visible" />
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/finish_reading"
-                style="@android:style/Widget.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/finish_butt"
                 android:visibility="visible" />
         </LinearLayout>

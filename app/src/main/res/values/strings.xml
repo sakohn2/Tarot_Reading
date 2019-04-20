@@ -13,6 +13,12 @@
     <string name="pastCard">it\'s the past fortune card</string>
     <string name="presentCard">it\'s the present fortune card</string>
     <string name="futureCard">it\'s the future fortune card</string>
+    <string name="setup_expln">In order for me to read your fortune with the cards, I must first get to know a little bit about you. Please tell me the following information:</string>
+    <string name="close_card">The card in question</string>
+    <string name="card_name">The Magician</string>
+    <string name="description_start">Description:</string>
+    <string name="full_description">This is the place holder text for the full description of the card. It should include the meaning of the card, without any real interpretation</string>
+    <string name="tense_fortune">Here is the placeholder for the text that takes into account the card\'s placement in the spread.</string>
     <string-array name="fav_colors">
         <item>Blue</item>
         <item>Red</item>

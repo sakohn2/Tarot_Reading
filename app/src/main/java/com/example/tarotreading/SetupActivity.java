@@ -179,7 +179,6 @@ import java.util.Calendar;
             findViewById(R.id.start_button).setOnClickListener(v -> startReading());
         }
         void startReading() {
-            Toast.makeText(this, "Start Reading!", Toast.LENGTH_SHORT).show();
             // Check if a birth-date was entered (and completely entered)
             if (BIRTH_DATE.equals("") || BIRTH_DATE.contains("M") || BIRTH_DATE.contains("D") || BIRTH_DATE.contains("Y")) {
                 Toast.makeText(this, "Please enter your birthday~", Toast.LENGTH_SHORT).show();
