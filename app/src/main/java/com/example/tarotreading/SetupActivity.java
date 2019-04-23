@@ -34,10 +34,11 @@ import java.util.Calendar;
          * the birth_date currently in the edit_text.
          */
         private String BIRTH_DATE = "";
+
         /**
-         * Accessible tarotReading that is the current one.
+         * The function that loads the setup activity
+         * @param savedInstanceState the instance which starts the loading of the setup
          */
-        private TarotReading currentReading;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -185,12 +186,9 @@ import java.util.Calendar;
                 return;
             }
             // Set up a User to pass to the tarotReading (if birthday was entered)
-            User current = new User(FAV_SEASON, FAV_COLOR, BIRTH_DATE);
-            // Move to the activity_reading and call
-            currentReading = new TarotReading(current);
-
+            User.currentUser = new User(FAV_SEASON, FAV_COLOR, BIRTH_DATE);
+            // Move to the activity_reading
             Intent readingIntent = new Intent(this, ReadingsActivity.class);
-
             startActivity(readingIntent);
             finish();
         }

@@ -6,10 +6,23 @@ package com.example.lib;
  * A user is set up once the "Read My Fortune" button is hit.
  */
 public class User {
+    /**
+     * the favSeason of the User
+     */
     private String favSeason;
+    /**
+     * The favorite color of the User.
+     */
     private String favColor;
+    /**
+     * The star-sign of the User based on their input birthday.
+     */
     private String starSign = "";
 
+    /**
+     * The current User for the program.
+     */
+    public static User currentUser;
     /**
      * Constructor for the User once the reading is assigned.
      * The birth-date will be changed into a star-sign and then assigned.
