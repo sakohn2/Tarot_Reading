@@ -1,6 +1,5 @@
 package com.example.lib;
 
-
 public class TarotCard {
     /**
      * URL used to call the API for the specific card.
@@ -10,6 +9,7 @@ public class TarotCard {
      * The short name of the card as per the API.
      */
     private String shortName = "ar01";
+    private String name = "The Magician";
 
     /**
      * Constructor for the tarotCard class.
