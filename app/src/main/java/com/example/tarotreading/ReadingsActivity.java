@@ -17,10 +17,16 @@ public class ReadingsActivity extends AppCompatActivity {
         // Set the layout for this activity
         setContentView(R.layout.activity_reading);
 
+        boolean newReading = getIntent().getBooleanExtra("newReading", false);
         ImageButton pastButton = findViewById(R.id.card_past);
         ImageButton presentButton = findViewById(R.id.card_present);
         ImageButton futureButton = findViewById(R.id.card_future);
 
+        if (newReading) {
+            PAST_FLIPPED = false;
+            PRESENT_FLIPPED = false;
+            FUTURE_FLIPPED = false;
+        }
         if (PAST_FLIPPED) {
             pastButton.setImageResource(R.drawable.ar01);
         }

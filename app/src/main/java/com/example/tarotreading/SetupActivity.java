@@ -189,6 +189,7 @@ import java.util.Calendar;
             User.currentUser = new User(FAV_SEASON, FAV_COLOR, BIRTH_DATE);
             // Move to the activity_reading
             Intent readingIntent = new Intent(this, ReadingsActivity.class);
+            readingIntent.putExtra("newReading", true);
             startActivity(readingIntent);
             finish();
         }
