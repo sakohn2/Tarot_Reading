@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -27,6 +26,7 @@ public class CardActivity extends AppCompatActivity {
     private static RequestQueue requestQueue;
 
     private String currentCardName = "The ";
+    private String currentCardDesc = "this should be the description";
     /**
      * Run this activity when a card is chosen
      *
@@ -60,10 +60,6 @@ public class CardActivity extends AppCompatActivity {
             Log.i(TAG, shortName);
             startAPICall(shortName);
         }
-
-        // After the API is called, the full name of the card should have updated
-        // and we will change the full name textView to the name given
-        // TextView fullName = findViewById(R.id.card_fullName);
 
         // This will call the backToReadings() method once the back button is clicked
         findViewById(R.id.back).setOnClickListener(v -> backToReadings());
@@ -108,10 +104,15 @@ public class CardActivity extends AppCompatActivity {
     private void getCardInfo(final String response) {
         JsonParser parser = new JsonParser();
         JsonObject jsonObject = parser.parse(response).getAsJsonObject().getAsJsonObject("card");
+        // The name of the current card is set up here
         currentCardName = jsonObject.get("name").getAsString();
         Log.i(TAG, currentCardName);
         TextView nameView = findViewById(R.id.card_fullName);
         nameView.setText(currentCardName);
+        // Set up the description
+        currentCardDesc = jsonObject.get("desc").getAsString();
+        TextView descView = findViewById(R.id.full_description);
+        descView.setText(currentCardDesc);
     }
     /**
      * This function is built to be activated on the click of the back button to send the user back
