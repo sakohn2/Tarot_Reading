@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Tarot Reading</string>
-    <string name="fav_colors">"Your favorite color is: "</string>
-    <string name="fav_seasons">Your favorite season is:</string>
-    <string name="birthday">Your birthday is:</string>
+    <string name="fav_colors">My favorite color is: </string>
+    <string name="fav_seasons">My favorite season is: </string>
+    <string name="birthday">My birthday is: </string>
     <string name="birthdate_format">MM/DD/YY</string>
     <string name="The_title_placeholder">Tarot Fortunes</string>
     <string name="start_fortune">Read My Fortune</string>
@@ -19,6 +19,7 @@
     <string name="description_start">Allow me to describe this card:</string>
     <string name="full_description">This is the place holder text for the full description of the card. It should include the meaning of the card, without any real interpretation</string>
     <string name="tense_fortune">Here is the placeholder for the text that takes into account the card\'s placement in the spread.</string>
+    <string name="intro">So you would like to know your fortune, hm? \nThen I shall do a three-card reading for you. I will show you insight into your past, your present, and your future.</string>
     <string-array name="fav_colors">
         <item>Blue</item>
         <item>Red</item>

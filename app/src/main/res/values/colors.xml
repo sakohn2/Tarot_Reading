@@ -3,7 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="cardName">#00108e</color>
+    <color name="cardName">#00108E</color>
     <color name="black">#000000</color>
-    <color name="textBox">#8CFFFFFF</color>
+    <color name="textBox">#74FFFFFF</color>
+    <color name="userInput">#E5FFFFFF</color>
 </resources>

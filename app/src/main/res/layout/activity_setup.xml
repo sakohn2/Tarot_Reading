@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible">
+    android:visibility="visible"
+    android:background="@drawable/magic_background">
 
 
     <LinearLayout
@@ -30,13 +31,32 @@
             app:srcCompat="@drawable/tarot" />
 
         <TextView
+            android:id="@+id/intro_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/intro"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:fontFamily="@font/magical" />
+
+        <TextView
             android:id="@+id/setup_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/fonts"
+            android:gravity="center"
             android:padding="20dp"
             android:text="@string/setup_expln"
-            android:visibility="visible" />
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:typeface="normal"
+            android:visibility="visible"
+            app:fontFamily="@font/magical" />
 
         <TableLayout
             android:id="@+id/tableLayout"
@@ -57,7 +77,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fav_colors" />
+                    android:text="@string/fav_colors"
+                    android:textColor="@color/black" />
 
                 <Spinner
                     android:id="@+id/fav_colors"
@@ -76,7 +97,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fav_seasons" />
+                    android:text="@string/fav_seasons"
+                    android:textColor="@color/black" />
 
                 <Spinner
                     android:id="@+id/fav_seasons"
@@ -94,7 +116,8 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/birthday" />
+                    android:text="@string/birthday"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/birth_date"

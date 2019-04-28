@@ -1,15 +1,21 @@
 package com.example.tarotreading;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lib.TarotReading;
@@ -43,6 +49,13 @@ import java.util.Calendar;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_setup);
+
+            // Changing intro text to highlight the words past, present, and future in color
+            TextView intro = findViewById(R.id.intro_text);
+            intro.setText(Html.fromHtml("So you would like to know your fortune, hm?" +
+                    "\nThen I shall do a three-card reading for you.\nI will show you insight into your " +
+                    "<font color='#00108e'>past</font>, " +
+                    "your <font color='#00108e'>present</font>, and your <font color='#00108e'>future</font>."));
 
             // Colors spinner
             Spinner colorSpinner = findViewById(R.id.fav_colors);
