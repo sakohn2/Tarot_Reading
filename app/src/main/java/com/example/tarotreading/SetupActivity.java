@@ -187,6 +187,8 @@ import java.util.Calendar;
             }
             // Set up a User to pass to the tarotReading (if birthday was entered)
             User.currentUser = new User(FAV_SEASON, FAV_COLOR, BIRTH_DATE);
+            // This updates the static variable with the new currentUser.
+            TarotReading newReading = new TarotReading();
             // Move to the activity_reading
             Intent readingIntent = new Intent(this, ReadingsActivity.class);
             readingIntent.putExtra("newReading", true);
