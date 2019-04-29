@@ -134,13 +134,16 @@ public class CardActivity extends AppCompatActivity {
             dirn = "rightside-up.";
         } else {
             currentKeyWords = jsonObject.get("meaning_rev").getAsString();
+            if (currentCardName.equals("The Sun")) {
+                currentKeyWords = jsonObject.get("meaning_up").getAsString() + currentKeyWords;
+            }
             dirn = "upside-down.";
         }
         TextView keyWords = findViewById(R.id.key_words);
         keyWords.setText(currentKeyWords);
         // Last part of explanation will hold the meaning for the particular tense, so it makes more
         // sense as a tarot reading.
-        String lastPartExpln = "";
+        String lastPartExpln;
         if (tense.equals("past")) {
             lastPartExpln = " They represent either your past or some event that led you to where you are now:";
         } else if (tense.equals("present")) {

@@ -105,16 +105,16 @@ public class TarotReading {
         while (futureShort.equals(presentShort) || futureShort.equals(pastShort)) {
             futureShort = someAlgorithm(currentUser);
         }
-        int upPa = (int) (Math.random() * 100);
-        if (upPa % 2 == 0) {
+        int upPa = new Random().nextInt(1);
+        if (upPa == 1) {
             pastUp = false;
         }
-        int upPr = (int) (Math.random() * 100);
-        if (upPr % 2 == 0) {
+        int upPr = new Random().nextInt(4);
+        if (upPr == 1) {
             presentUp = false;
         }
-        int upF = (int) (Math.random() * 100);
-        if (upF % 2 == 0) {
+        int upF = new Random().nextInt(4);
+        if (upF == 1) {
             futureUp = false;
         }
 
