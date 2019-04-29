@@ -7,8 +7,8 @@
     <string name="The_title_placeholder">Tarot Fortunes</string>
     <string name="start_fortune">Read My Fortune</string>
     <string name="reading_expln">Here is your fortune, my friend.</string>
-    <string name="back_butt">Back</string>
-    <string name="finish_butt">Finish</string>
+    <string name="back_butt">Place card back down</string>
+    <string name="finish_butt">I\'ve seen all I want to see</string>
     <string name="deck">it\'s a deck</string>
     <string name="pastCard">it\'s the past fortune card</string>
     <string name="presentCard">it\'s the present fortune card</string>
@@ -16,10 +16,11 @@
     <string name="setup_expln">In order for me to read your fortune with the cards, I must first get to know a little bit about you. Please tell me the following information:</string>
     <string name="close_card">The card in question</string>
     <string name="card_name">The Magician</string>
-    <string name="description_start">Allow me to describe this card:</string>
+    <string name="description_start">Allow me to describe this card in detail:</string>
     <string name="full_description">This is the place holder text for the full description of the card. It should include the meaning of the card, without any real interpretation</string>
     <string name="tense_fortune">Here is the placeholder for the text that takes into account the card\'s placement in the spread.</string>
     <string name="intro">So you would like to know your fortune, hm? \nThen I shall do a three-card reading for you. I will show you insight into your past, your present, and your future.</string>
+    <string name="keyWordDescript">These words are the meaning of this card when it appears upright. They represent either your past or some event that led you to where you are now:</string>
     <string-array name="fav_colors">
         <item>Blue</item>
         <item>Red</item>

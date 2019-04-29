@@ -2,6 +2,7 @@ package com.example.tarotreading;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -27,6 +28,9 @@ public class CardActivity extends AppCompatActivity {
 
     private String currentCardName = "The ";
     private String currentCardDesc = "this should be the description";
+    private String currentKeyWords = "This should be the key words for the card";
+    private boolean up = true;
+    private String tense = "past";
     /**
      * Run this activity when a card is chosen
      *
@@ -46,6 +50,11 @@ public class CardActivity extends AppCompatActivity {
         // This gets the short name of the chosen card from ReadingsActivity when it was passed through
         String shortName = getIntent().getStringExtra("shortName");
 
+        // Get whether the card is upright or not
+        up = getIntent().getBooleanExtra("up", true);
+        // getting the tense to use in the description of the card
+        tense = getIntent().getStringExtra("tense");
+
         // This gets the id number for the card based on its name (short name)
         int currentCardNum = getResources().getIdentifier(shortName, "drawable", getPackageName());
 
@@ -54,6 +63,9 @@ public class CardActivity extends AppCompatActivity {
         // The id number previously determined.
         ImageView currentCard = findViewById(R.id.viewCard);
         currentCard.setImageResource(currentCardNum);
+        if (!up) {
+            currentCard.setScaleY(-1f);
+        }
 
         // As long as a shortName was actually passed (not null) this will put the API call in motion
         if (shortName != null) {
@@ -107,12 +119,42 @@ public class CardActivity extends AppCompatActivity {
         // The name of the current card is set up here
         currentCardName = jsonObject.get("name").getAsString();
         Log.i(TAG, currentCardName);
+        if (!up) {
+            currentCardName += "--Reversed";
+        }
         TextView nameView = findViewById(R.id.card_fullName);
         nameView.setText(currentCardName);
         // Set up the description
         currentCardDesc = jsonObject.get("desc").getAsString();
         TextView descView = findViewById(R.id.full_description);
         descView.setText(currentCardDesc);
+        String dirn;
+        if (up) {
+            currentKeyWords = jsonObject.get("meaning_up").getAsString();
+            dirn = "rightside-up.";
+        } else {
+            currentKeyWords = jsonObject.get("meaning_rev").getAsString();
+            dirn = "upside-down.";
+        }
+        TextView keyWords = findViewById(R.id.key_words);
+        keyWords.setText(currentKeyWords);
+        // Last part of explanation will hold the meaning for the particular tense, so it makes more
+        // sense as a tarot reading.
+        String lastPartExpln = "";
+        if (tense.equals("past")) {
+            lastPartExpln = " They represent either your past or some event that led you to where you are now:";
+        } else if (tense.equals("present")) {
+            lastPartExpln = " They represent either how your life is now or something " +
+                    "around your current situation:";
+        } else {
+            lastPartExpln = " They represent either your future or some event " +
+                    "that will lead you into your future:";
+        }
+
+        TextView expln = findViewById(R.id.word_expln);
+        expln.setText(Html.fromHtml("These words are the meaning of this card when it appears "
+                + dirn + lastPartExpln));
+
     }
     /**
      * This function is built to be activated on the click of the back button to send the user back

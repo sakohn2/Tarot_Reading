@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.lib.TarotReading;
 import com.example.lib.User;
@@ -41,6 +43,22 @@ public class ReadingsActivity extends AppCompatActivity {
      */
     private static String futureShortName = "ar03";
 
+    /**
+     * This variable holds whether the past card is in the upright or upside-down position,
+     * this affects how the card is read for the fortune.
+     */
+    private static boolean pastUp = true;
+    /**
+     * This variable holds whether the present card is in the upright or upside-down position,
+     * this affects how the card is read for the fortune.
+     */
+    private static boolean presentUp = true;
+    /**
+     * This variable holds whether the future card is in the upright or upside-down position,
+     * this affects how the card is read for the fortune.
+     */
+    private static boolean futureUp = true;
+
     private static final String TAG = "MP5:Card";
 
     /**
@@ -54,11 +72,25 @@ public class ReadingsActivity extends AppCompatActivity {
         // Set the layout for this activity
         setContentView(R.layout.activity_reading);
 
+        TextView explanation = findViewById(R.id.expln);
+        String starSign = User.currentUser.getStarSign();
+        explanation.setText(Html.fromHtml("A " + starSign + " I see. Interesting." +
+                " Please click on a card to view it.\nThe card to the left represents a part of your " +
+                "<font color='#00108e'>past</font>, " +
+                "the middle your <font color='#00108e'>present</font>, " +
+                "and the right is your <font color='#00108e'>future</font>."));
+
+        int in = (int) (Math.random() * 10);
+        Log.i(TAG, Integer.toString(in));
         if (currentU == null || !(currentU.equals(User.currentUser))) {
             currentU = User.currentUser;
             pastShortName = TarotReading.getPastShort();
             presentShortName = TarotReading.getPresentShort();
             futureShortName = TarotReading.getFutureShort();
+            pastUp = TarotReading.isPastUp();
+            presentUp = TarotReading.isPresentUp();
+            futureUp = TarotReading.isFutureUp();
+            Log.i(TAG, pastUp + ", " + presentUp + ", " + futureUp);
             Log.i(TAG, pastShortName + ", " + presentShortName + ", " + futureShortName);
         }
         boolean newReading = getIntent().getBooleanExtra("newReading", false);
@@ -74,14 +106,23 @@ public class ReadingsActivity extends AppCompatActivity {
         if (PAST_FLIPPED) {
             int pastCard = getResources().getIdentifier(pastShortName, "drawable", getPackageName());
             pastButton.setImageResource(pastCard);
+            if (!pastUp) {
+                pastButton.setScaleY(-1f);
+            }
         }
         if (PRESENT_FLIPPED) {
             int presentCard = getResources().getIdentifier(presentShortName, "drawable", getPackageName());
             presentButton.setImageResource(presentCard);
+            if (!presentUp) {
+                presentButton.setScaleY(-1f);
+            }
         }
         if (FUTURE_FLIPPED) {
             int futureCard = getResources().getIdentifier(futureShortName, "drawable", getPackageName());
             futureButton.setImageResource(futureCard);
+            if (!futureUp) {
+                futureButton.setScaleY(-1f);
+            }
         }
         findViewById(R.id.finish_reading).setOnClickListener(v -> backToSetUp());
 
@@ -114,6 +155,7 @@ public class ReadingsActivity extends AppCompatActivity {
         // the card is
         backup.putExtra("tense", "present");
         backup.putExtra("shortName", presentShortName);
+        backup.putExtra("up", presentUp);
         startActivity(backup);
         finish();
     }
@@ -128,6 +170,7 @@ public class ReadingsActivity extends AppCompatActivity {
         Intent backup = new Intent(this, CardActivity.class);
         backup.putExtra("tense", "future");
         backup.putExtra("shortName", futureShortName);
+        backup.putExtra("up", futureUp);
         startActivity(backup);
         finish();
     }
@@ -142,6 +185,7 @@ public class ReadingsActivity extends AppCompatActivity {
         Intent backup = new Intent(this, CardActivity.class);
         backup.putExtra("tense", "past");
         backup.putExtra("shortName", pastShortName);
+        backup.putExtra("up", pastUp);
         startActivity(backup);
         finish();
     }

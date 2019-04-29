@@ -80,7 +80,7 @@ public class User {
         // The next few lines are checking where the birth-falls for the star-sign
         switch (month) {
             case 1:
-                if (day >= 20) {
+                if (day > 20) {
                     starSign = "Aquarius";
                     return;
                 } else {
@@ -88,7 +88,7 @@ public class User {
                     return;
                 }
             case 2:
-                if (day >= 19) {
+                if (day > 19) {
                     starSign = "Pisces";
                     return;
                 } else {
@@ -104,7 +104,7 @@ public class User {
                     return;
                 }
             case 4:
-                if (day <= 19) {
+                if (day <= 20) {
                     starSign = "Aries";
                     return;
                 } else {
@@ -112,7 +112,7 @@ public class User {
                     return;
                 }
             case 5:
-                if (day <= 20) {
+                if (day <= 21) {
                     starSign = "Taurus";
                     return;
                 } else {
@@ -120,7 +120,7 @@ public class User {
                     return;
                 }
             case 6:
-                if (day <= 20) {
+                if (day <= 21) {
                     starSign = "Gemini";
                     return;
                 } else {
@@ -136,7 +136,7 @@ public class User {
                     return;
                 }
             case 8:
-                if (day <= 22) {
+                if (day <= 23) {
                     starSign = "Leo";
                     return;
                 } else {
@@ -144,7 +144,7 @@ public class User {
                     return;
                 }
             case 9:
-                if (day <= 22) {
+                if (day <= 23) {
                     starSign = "Virgo";
                     return;
                 } else {
@@ -152,7 +152,7 @@ public class User {
                     return;
                 }
             case 10:
-                if (day <= 22) {
+                if (day <= 23) {
                     starSign = "Libra";
                     return;
                 } else {
@@ -160,7 +160,7 @@ public class User {
                     return;
                 }
             case 11:
-                if (day <= 20) {
+                if (day <= 22) {
                     starSign = "Scorpio";
                     return;
                 } else {

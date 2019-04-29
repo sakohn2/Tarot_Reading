@@ -20,14 +20,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/expln"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/textBox"
-            android:padding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
             android:text="@string/reading_expln"
             android:textColor="@color/black"
-            android:visibility="visible" />
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:fontFamily="@font/magical" />
 
         <LinearLayout
             android:layout_width="match_parent"

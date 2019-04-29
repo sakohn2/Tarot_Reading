@@ -1,6 +1,8 @@
 package com.example.lib;
 
 
+import java.util.Random;
+
 /**
  * This class is responsible for taking the user information and some mystical insight and turning that
  * into a classic three-card tarot reading. The cards represent the past, present, and future of the
@@ -26,6 +28,43 @@ public class TarotReading {
      * The current User's short name for the future card.
      */
     private static String futureShort;
+
+    /**
+     * This variable holds whether the past card is in the upright or upside-down position,
+     * this affects how the card is read for the fortune.
+     */
+    private static boolean pastUp = true;
+    /**
+     * This variable holds whether the present card is in the upright or upside-down position,
+     * this affects how the card is read for the fortune.
+     */
+    private static boolean presentUp = true;
+    /**
+     * This variable holds whether the future card is in the upright or upside-down position,
+     * this affects how the card is read for the fortune.
+     */
+    private static boolean futureUp = true;
+    /**
+     * returns the pastUp boolean; true when the card is upright, false when upside down.
+     * @return if the past card is flipped up
+     */
+    public static boolean isPastUp() {
+        return pastUp;
+    }
+    /**
+     * returns the futureUp boolean; true when the card is upright, false when upside down.
+     * @return if the future card is flipped up
+     */
+    public static boolean isFutureUp() {
+        return futureUp;
+    }
+    /**
+     * returns the presentUp boolean; true when the card is upright, false when upside down.
+     * @return if the present card is flipped up
+     */
+    public static boolean isPresentUp() {
+        return presentUp;
+    }
 
     /**
      * Returns the short name of the future card for this reading.
@@ -66,6 +105,19 @@ public class TarotReading {
         while (futureShort.equals(presentShort) || futureShort.equals(pastShort)) {
             futureShort = someAlgorithm(currentUser);
         }
+        int upPa = (int) (Math.random() * 100);
+        if (upPa % 2 == 0) {
+            pastUp = false;
+        }
+        int upPr = (int) (Math.random() * 100);
+        if (upPr % 2 == 0) {
+            presentUp = false;
+        }
+        int upF = (int) (Math.random() * 100);
+        if (upF % 2 == 0) {
+            futureUp = false;
+        }
+
     }
 
 
