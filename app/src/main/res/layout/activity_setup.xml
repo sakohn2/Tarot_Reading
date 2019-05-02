@@ -28,7 +28,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:scaleType="centerInside"
-            android:src="@drawable/tarot"
+            android:src="@drawable/tarot_title"
             android:visibility="visible"
             app:srcCompat="@drawable/tarot_title" />
 
