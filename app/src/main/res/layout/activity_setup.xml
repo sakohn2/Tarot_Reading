@@ -25,10 +25,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:contentDescription="@string/The_title_placeholder"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:scaleType="centerInside"
             android:src="@drawable/tarot"
             android:visibility="visible"
-            app:srcCompat="@drawable/tarot" />
+            app:srcCompat="@drawable/tarot_title" />
 
         <TextView
             android:id="@+id/intro_text"
